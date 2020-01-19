@@ -1,10 +1,7 @@
 import React from 'react';
-import { Page, ReactSpecimen } from 'catalog';
-import JSONTree from 'react-json-tree';
+import { Page } from 'catalog';
 import Highlight from 'react-highlight';
 import 'highlight.js/styles/zenburn.css';
-import * as MUI from 'material-ui';
-import RaisedButton from 'material-ui/RaisedButton';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 
 /* eslint-disable */

@@ -42,21 +42,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 1,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 3
-      },
-      "lg": {
-        "col": 3
-      }
-    }
   },
   {
     "id": "2",
@@ -75,21 +60,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 1,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 7
-      },
-      "lg": {
-        "col": 7
-      }
-    }
   },
   {
     "id": "3",
@@ -108,21 +78,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 1,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 7
-      },
-      "lg": {
-        "col": 7
-      }
-    }
   },
   {
     "id": "4",
@@ -141,21 +96,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 1,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 7
-      },
-      "lg": {
-        "col": 7
-      }
-    }
   },
   {
     "id": "4.1",
@@ -166,21 +106,6 @@ const mui = [
       "floatingLabelText": "Lookup address",
       "fullWidth": true
     },
-    "layout": {
-      "row": 2,
-      "xs": {
-        "col": 24
-      },
-      "sm": {
-        "col": 24
-      },
-      "md": {
-        "col": 24
-      },
-      "lg": {
-        "col": 24
-      }
-    }
   },
   {
     "id": "4.2",
@@ -191,21 +116,6 @@ const mui = [
       "floatingLabelText": "Level",
       "fullWidth": true
     },
-    "layout": {
-      "row": 3,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 4
-      },
-      "lg": {
-        "col": 4
-      }
-    }
   },
   {
     "id": "4.6",
@@ -224,21 +134,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 3,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 4
-      },
-      "lg": {
-        "col": 4
-      }
-    }
   },
   {
     "id": "4.7",
@@ -257,21 +152,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 3,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 4
-      },
-      "lg": {
-        "col": 4
-      }
-    }
   },
   {
     "id": "4.7",
@@ -290,21 +170,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 3,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 12
-      },
-      "lg": {
-        "col": 12
-      }
-    }
   },
   {
     "id": "10",
@@ -323,21 +188,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 4,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 6
-      },
-      "lg": {
-        "col": 6
-      }
-    }
   },
   {
     "id": "11",
@@ -356,21 +206,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 4,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 6
-      },
-      "lg": {
-        "col": 6
-      }
-    }
   },
   {
     "id": "12",
@@ -406,21 +241,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 4,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 6
-      },
-      "lg": {
-        "col": 6
-      }
-    }
   },
   {
     "id": "13",
@@ -451,21 +271,6 @@ const mui = [
         }
       ]
     },
-    "layout": {
-      "row": 4,
-      "xs": {
-        "col": 12
-      },
-      "sm": {
-        "col": 12
-      },
-      "md": {
-        "col": 6
-      },
-      "lg": {
-        "col": 6
-      }
-    }
   }
 ];
 

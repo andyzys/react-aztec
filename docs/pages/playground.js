@@ -1,24 +1,11 @@
 import React from 'react';
-import { Page, ReactSpecimen } from 'catalog';
-import JSONTree from 'react-json-tree';
-import Highlight from 'react-highlight';
+import { Page } from 'catalog';
 import 'highlight.js/styles/zenburn.css';
 import * as MUI from 'material-ui';
 import FlatButton from 'material-ui/FlatButton';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-import { Link } from 'react-router';
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
 import SplitPane from 'react-split-pane';
 import { Aztec } from './../../src';
 import JSONEditor from './../jsoneditor.min';
@@ -66,7 +53,7 @@ class Playground extends React.Component {
       },
     };
     editor = new JSONEditor(container, options);
-
+    console.log('!!', editor);
     editor.set(this.state.data);
   }
   updateData() {
@@ -144,16 +131,17 @@ class Playground extends React.Component {
             {}
           </div>
           <div className="btn-wrapper">
-            <FlatButton label="Import JSON" labelPosition="before" className="export" primary>
+            <FlatButton label="Import JSON" labelPosition="before" className="export-btn" primary>
               <input type="file" style={styles.imageInput} onChange={this.importJSON} />
             </FlatButton>
             <FlatButton
               label="Export JSON"
-              className="export"
+              className="export-btn"
               primary
               onTouchTap={this.exportJSON}
             />
             <FlatButton
+              className="export-btn"
               label={`Switch to ${this.state.mode === 'tree' ? 'text' : 'tree'}`}
               primary
               onTouchTap={this.switchMode}
@@ -165,7 +153,8 @@ class Playground extends React.Component {
             title="Playground"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
             iconElementLeft={<IconButton>{}</IconButton>}
-            iconElementRight={<FlatButton label="Preview" onTouchTap={this.toggleView} />}
+            iconElementRight={<FlatButton label="Preview"
+              className="export-btn" onTouchTap={this.toggleView} />}
           />
           <div className="aztec-container">
             <Aztec data={this.state.data} library={MUI} />
@@ -181,7 +170,8 @@ class Playground extends React.Component {
           title="Playground"
           iconClassNameRight="muidocs-icon-navigation-expand-more"
           iconElementLeft={<IconButton>{}</IconButton>}
-          iconElementRight={<FlatButton label="Switch to Edit Mode" onTouchTap={this.toggleView} />}
+          iconElementRight={<FlatButton label="Switch to Edit Mode"
+            className="export-btn" onTouchTap={this.toggleView} />}
         />
         <div className="aztec-container">
           <Aztec data={this.state.data} library={MUI} />

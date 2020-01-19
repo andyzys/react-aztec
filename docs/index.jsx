@@ -1,14 +1,13 @@
 /* eslint-disable global-require, import/no-unresolved, react/no-multi-comp */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
+import { Catalog } from 'catalog';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import 'purecss/build/pure.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import { Aztec } from './../src';
 import './jsoneditor.min.css';
-import '../style.css';
 import './main.css';
 import demoMUI from './pages/demo-mui';
 import textfield from './pages/textfield';
@@ -108,11 +107,6 @@ ReactDOM.render(
       <Catalog
         imports={documentationImports}
         pages={pages}
-        specimens={{
-          javascript: props => <CodeSpecimen {...props} lang="javascript" />,
-          js: props => <CodeSpecimen {...props} lang="javascript" />,
-          jsx: props => <ReactSpecimen {...props} />
-        }}
         title={title}
       />
     </div>
