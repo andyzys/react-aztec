@@ -53,7 +53,7 @@ class Layout extends React.Component {
     `
     return (
       <Page>
-        <p>React aztec uses bootstrap 24 column grid layout.</p>
+        <p>uses bootstrap 24 column grid layout.</p>
 
         <hr />
 

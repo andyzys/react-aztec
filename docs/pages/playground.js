@@ -11,7 +11,14 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import { Link } from 'react-router';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
 import SplitPane from 'react-split-pane';
 import { Aztec } from './../../src';
 import JSONEditor from './../jsoneditor.min';
@@ -29,8 +36,8 @@ const styles = {
     right: 0,
     left: 0,
     width: '100%',
-    opacity: 0
-  }
+    opacity: 0,
+  },
 };
 
 /** Demo Component */
@@ -42,7 +49,7 @@ class Playground extends React.Component {
       mode: 'tree',
       editor: null,
       data: JSONData,
-      preview: false
+      preview: false,
     };
     this.switchMode = this.switchMode.bind(this);
     this.onSave = this.onSave.bind(this);
@@ -56,7 +63,7 @@ class Playground extends React.Component {
     const options = {
       onChange: () => {
         this.updateData();
-      }
+      },
     };
     editor = new JSONEditor(container, options);
 
@@ -65,14 +72,17 @@ class Playground extends React.Component {
   updateData() {
     const data = editor.get();
     this.setState({
-      data
+      data,
     });
   }
   importJSON(event) {
     if (event.target.files && event.target.files[0]) {
-      const fileTypes = ['json'];  // acceptable file types
-      const extension = event.target.files[0].name.split('.').pop().toLowerCase();  // file extension from input file
-      const isSuccess = fileTypes.indexOf(extension) > -1;  // is extension in acceptable types
+      const fileTypes = ['json']; // acceptable file types
+      const extension = event.target.files[0].name
+        .split('.')
+        .pop()
+        .toLowerCase(); // file extension from input file
+      const isSuccess = fileTypes.indexOf(extension) > -1; // is extension in acceptable types
 
       if (isSuccess) {
         const reader = new FileReader();
@@ -80,7 +90,7 @@ class Playground extends React.Component {
           const obj = JSON.parse(evt.target.result);
           editor.set(obj);
           this.setState({
-            data: obj
+            data: obj,
           });
         };
         reader.readAsText(event.target.files[0]);
@@ -89,14 +99,14 @@ class Playground extends React.Component {
       }
     }
   }
-  exportJSON(){
+  exportJSON() {
     const a = document.createElement('a');
     document.body.appendChild(a);
     a.style = 'display: none';
     const data = editor.get();
     const json = JSON.stringify(data, null, 2);
     const blob = new Blob([json], {
-      type: 'application/json'
+      type: 'application/json',
     });
     const url = window.URL.createObjectURL(blob);
     a.href = url;
@@ -109,12 +119,12 @@ class Playground extends React.Component {
     if (mode === 'tree') {
       editor.setMode('text');
       this.setState({
-        mode: 'text'
+        mode: 'text',
       });
     } else {
       editor.setMode('tree');
       this.setState({
-        mode: 'tree'
+        mode: 'tree',
       });
     }
   }
@@ -123,21 +133,18 @@ class Playground extends React.Component {
   }
   toggleView() {
     this.setState({
-      preview: !this.state.preview
+      preview: !this.state.preview,
     });
   }
   renderSplitPane() {
     return (
       <SplitPane defaultSize={400}>
         <div className="jsoneditor">
-          <div id="jsoneditor" className="pull-left">{}</div>
+          <div id="jsoneditor" className="pull-left">
+            {}
+          </div>
           <div className="btn-wrapper">
-            <FlatButton
-              label="Import JSON"
-              labelPosition="before"
-              className="export"
-              primary
-            >
+            <FlatButton label="Import JSON" labelPosition="before" className="export" primary>
               <input type="file" style={styles.imageInput} onChange={this.importJSON} />
             </FlatButton>
             <FlatButton
@@ -147,7 +154,7 @@ class Playground extends React.Component {
               onTouchTap={this.exportJSON}
             />
             <FlatButton
-              label={`Switch to ${(this.state.mode === 'tree') ? 'text' : 'tree'}`}
+              label={`Switch to ${this.state.mode === 'tree' ? 'text' : 'tree'}`}
               primary
               onTouchTap={this.switchMode}
             />
@@ -155,7 +162,7 @@ class Playground extends React.Component {
         </div>
         <div className="aztec-wrapper">
           <AppBar
-            title="React Aztec Playground"
+            title="Playground"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
             iconElementLeft={<IconButton>{}</IconButton>}
             iconElementRight={<FlatButton label="Preview" onTouchTap={this.toggleView} />}
@@ -165,13 +172,13 @@ class Playground extends React.Component {
           </div>
         </div>
       </SplitPane>
-    )
+    );
   }
   renderPreviewMode() {
     return (
       <div className="aztec-wrapper">
         <AppBar
-          title="React Aztec Playground"
+          title="Playground"
           iconClassNameRight="muidocs-icon-navigation-expand-more"
           iconElementLeft={<IconButton>{}</IconButton>}
           iconElementRight={<FlatButton label="Switch to Edit Mode" onTouchTap={this.toggleView} />}
@@ -180,21 +187,22 @@ class Playground extends React.Component {
           <Aztec data={this.state.data} library={MUI} />
         </div>
       </div>
-    )
+    );
   }
   render() {
     return (
       <Page>
-        <Drawer open={this.state.open} containerStyle={{
-          width: '100%',
-          display: 'table'
-        }}>
-          <div className={`${this.state.preview ? 'show':'hide'}`}>
+        <Drawer
+          open={this.state.open}
+          containerStyle={{
+            width: '100%',
+            display: 'table',
+          }}
+        >
+          <div className={`${this.state.preview ? 'show' : 'hide'}`}>
             {this.renderPreviewMode()}
           </div>
-          <div className={`${this.state.preview ? 'hide':'show'}`}>
-            {this.renderSplitPane()}
-          </div>
+          <div className={`${this.state.preview ? 'hide' : 'show'}`}>{this.renderSplitPane()}</div>
         </Drawer>
       </Page>
     );

@@ -1,5 +1,5 @@
 {
-  "name": "react-aztec",
+  "name": "form-generate",
   "description": "Material UI based dynamic form component for React using JSON-Schema",
   "author": "Ajain Vivek",
   "user": "ajainvivek",
@@ -52,7 +52,6 @@
     "react": "^15.3.2",
     "react-addons-test-utils": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-github-corner": "^0.3.0",
     "react-highlight": "^0.9.0",
     "react-json-tree": "^0.10.0",
     "react-split-pane": "^0.1.57",

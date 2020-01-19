@@ -1,7 +1,6 @@
 /* eslint-disable global-require, import/no-unresolved, react/no-multi-comp */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GithubCorner from 'react-github-corner';
 import { Catalog, CodeSpecimen, ReactSpecimen } from 'catalog';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import 'purecss/build/pure.css';
@@ -106,14 +105,6 @@ const pages = [
 ReactDOM.render(
   <MuiThemeProvider>
     <div>
-      <GithubCorner
-        href={`https://github.com/${project}`}
-        bannerColor="#1F2532"
-        octoColor="#f36"
-        width={80}
-        height={80}
-        direction="right"
-      />
       <Catalog
         imports={documentationImports}
         pages={pages}
